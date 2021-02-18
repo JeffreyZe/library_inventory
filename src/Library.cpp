@@ -9,6 +9,7 @@ Inventory _inventory;
 
 void DisplayMainMenu()
 {
+    cout << endl;
     cout << "Choose an option:" << endl;
     cout << "1. Add book" << endl;
     cout << "2. List all books" << endl;
@@ -66,6 +67,10 @@ void CheckInOrOutBook(bool CheckOut)
     else if (result == CheckInOrOutResult::Success)
     {
         cout << "Book checked " << inOrOut << "!" << endl;
+    }
+    else if (result == CheckInOrOutResult::AlreadyCheckedOut || result == CheckInOrOutResult::AlreadyCheckedIn)
+    {
+        cout << "Book already checked " + inOrOut << endl;
     }
     else
     {

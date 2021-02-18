@@ -66,9 +66,22 @@ CheckInOrOutResult Inventory::CheckInOrOutBook(std::string title, bool checkOut)
     {
         return CheckInOrOutResult::BookNotFound;
     }
-
-    Books[foundBookIndex].CheckInOrOut(checkOut);
-    return CheckInOrOutResult::Success;
+    else if (checkOut == Books[foundBookIndex].IsCheckedOut())
+    {
+        if (checkOut)
+        {
+            return CheckInOrOutResult::AlreadyCheckedOut;
+        }
+        else
+        {
+            return CheckInOrOutResult::AlreadyCheckedIn;
+        }
+    }
+    else
+    {
+        Books[foundBookIndex].CheckInOrOut(checkOut);
+        return CheckInOrOutResult::Success;
+    }
 }
 
 void Inventory::DisplayAllBooks()
