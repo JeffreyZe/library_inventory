@@ -6,16 +6,14 @@ class Book
 {
 
 private:
-    int Id;
     std::string Title;
     std::string Author;
     bool CheckedOut;
 
 public:
+    int Id;
     Book();
     Book(std::string title, std::string author);
-
-    void SetBookId(int id);
 
     void CheckInOrOut(bool checkOut);
 

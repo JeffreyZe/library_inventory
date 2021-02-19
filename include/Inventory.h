@@ -9,12 +9,9 @@ class Inventory
 
 private:
     std::vector<Book> Books;
-    int MaxBookId;
+    // int MaxBookId;
 
 public:
-
-
-    Inventory();
 
     void DisplayAllBooks();
     void DisplayCheckoutBooks();

@@ -23,7 +23,3 @@ bool Book::IsCheckedOut()
 {
     return CheckedOut;
 }
-
-void Book::SetBookId(int id){
-    Id = id;
-}

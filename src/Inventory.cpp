@@ -1,11 +1,6 @@
 #include "../include/Inventory.h"
 #include <vector>
 
-Inventory::Inventory()
-{
-    Inventory::MaxBookId = 0;
-}
-
 // int Inventory::GetNextBookId()
 // {
 //     Inventory::MaxBookId++;
@@ -19,9 +14,10 @@ int Inventory::NumberOfBooks()
 
 void Inventory::AddBook(Book book)
 {
-    Inventory::MaxBookId++;
+    // Inventory::MaxBookId++;
+    Book lastBoook = Books.back();
 
-    book.SetBookId(MaxBookId);
+    book.Id = lastBoook.Id + 1;
 
     Inventory::Books.push_back(book);
 }
